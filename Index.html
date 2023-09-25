@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>namma oori taxi</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body id="body">
+  <script src="Script.js"></script>
+    <div id="main">
+
+  <!-- HTML code for Sidebar -->
+      <div id="sidebar">
+
+        <div class="header">
+          <img align="left" src="Images/logotaxi.png" height="65px" width="65px">
+          <p>நம்ம ஊரு டாக்ஸி</p>
+        </div>
+
+        <div class="bottomSidebar">
+      
+            <div class="toggle-btn toggle-image">
+              <img align="left"  width="24" height="24" src="https://img.icons8.com/material-sharp/24/west-direction.png" alt="taxi" onclick="toggleSidebar()"/>
+            </div>
+      
+            <a href="" id="a">
+              <div class="dashboard">    
+                <img align="left" class="Sidebar-btn dashboard-color" width="16" height="16" src="Images/dashboard.png" alt="dashboard"/>
+                <p class="para">Dashboard</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="live-Tracking">    
+                <img align="left" class="Sidebar-btn livetracking-color" width="16" height="16" src="Images/livetracking.png" alt="gps-searching"/>
+                <p class="para">Live Tracking</p>
+              </div>
+            </a>
+              
+            <a href="" id="a"> 
+              <div class="Driver-Management">    
+                <img align="left" class="Sidebar-btn Driver-color" width="16" height="16" src="Images/drivermanagement.png" alt="taxi-driver"/>
+                <p class="para">Driver Management</p>
+              </div>
+            </a>
+            
+            <a href="" id="a"> 
+              <div class="Vehicle-Management" onclick="updatePath('Vehicle Management')">   
+                <img align="left" class="Sidebar-btn Vehicle-color" width="16" height="16" src="Images/vehiclemanage.png" alt="vahicle"/>
+                <p class="para">Vehicle Management</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="ride-manage">   
+                <img align="left" class="Sidebar-btn ridemanage-color" width="16" height="16" src="Images/managerides.png" alt="taxi-mobile-app"/>
+                <p class="para">Manage Rides</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="Employee">   
+                <img align="left" class="Sidebar-btn Employee-color" width="16" height="16" src="Images/employee.png" alt="employee-group"/>
+                <p class="para">Employees</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="clients">   
+                <img align="left" class="Sidebar-btn clients-color" width="16" height="16" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-team-leader-with-crown-badge-isolated-on-white-background-company-color-tal-revivo.png" alt="clients-group"/>
+                <p class="para">Clients</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="Trip-History">   
+                <img align="left" class="Sidebar-btn triphistory-color" width="16" height="16" src="Images/TripHistory.png" alt="triphistory"/>
+                <p class="para">Trip History</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="Payments"> 
+                <img align="left" class="Sidebar-btn payments-color" width="16" height="16" src="Images/payments.png" alt="payments"/>
+                <p class="para">Payments</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="Reports"> 
+                <img align="left" class="Sidebar-btn reports-color" width="16" height="16" src="Images/Report.png" alt="reports"/>
+                <p class="para">Reports</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="Fare-Database"> 
+                <img align="left" class="Sidebar-btn faredatabase-color" width="16" height="16" src="Images/faredatabase.png" alt="faredatabase"/>
+                <p class="para">Fare Database</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="SupportTickets"> 
+                <img align="left" class="Sidebar-btn Supporttickets-color" width="16" height="16" src="Images/supporttickets.png" alt="supporttickets"/>
+                <p class="para">Support Tickets</p>
+              </div>
+            </a>
+
+            <a href="" id="a"> 
+              <div class="Settings"> 
+                <img align="left" class="Sidebar-btn settings-color" width="16" height="16" src="Images/Settings.png" alt="settings"/>
+                <p class="para">Settings</p>
+              </div>
+            </a>
+        </div>
+      </div>
+
+      <!-- HTML  code for RightSide Content -->
+      <div class="right">
+        <!-- RightSide Top Content Show - Path, Time, Profile -->
+            <div class="topcontent">
+              <div class="tlefttcontent">
+                 <div id="path"></div>
+              </div>
+
+              <div class="trightcontent">
+                    <span id="current-date"></span>
+                    <a href=""><img id="topimg" width="20" height="20" src="Images/calender.png" alt="calendar"></a>
+                    <a href=""><img id="topimg" width="20" height="20" src="Images/notification.png" alt="notification"></a>
+                    <a href=""><img id="topimg" width="20" height="20" src="Images/remainder.png" alt="remainder"></a>
+
+                    <div class="profile">
+                          <div class="name">
+                              <span id="span1">Ezio Auditore</span><span id="span2">Admin</span>
+                          </div>
+                          <div class="card">
+                                <label for="file-input"><img src="Images/profile.png"></label>
+                            <input type="file" id="file-input" accept="image/*" onchange="changeProfilePhoto(this)">
+                          </div>
+                    </div> 
+              </div>
+            </div>
+
+            <!-- HTML code for TopBelowContent - show -> All vehicles, Inspection pending and etc.. -->
+              <div class="topbelowcontent">
+                  <div class="inside">
+                    <a href="#" id="a" onclick="updatePath('Vehicle Management / All Vehicle')">All Vehicles</a> 
+                  </div>
+                  <div class="inside">
+                   <a href="#" id="a">Inspection Pending </a> 
+                  </div>
+                  <div class="inside">
+                    <a href="#" id="a">Manage Approval</a> 
+                  </div>
+                  <div class="inside">
+                    <a href="#" id="a">Documents Expiry</a> 
+                  </div>
+              </div>
+
+            <!-- HTML code for Box Type Content -->
+            <div class="grid-container boxcontent" >
+
+              <div class="grid-item">
+                <div class="box" id="box1">
+                  <img align="left" id="leftimg" width="14" height="14" src="Images/vehiclemanage.png" alt="vachicle">
+                  <img align="right" id="rightimg" width="19" height="19" src="https://img.icons8.com/ios-glyphs/30/228BE6/menu--v3.png" alt="menu"/>
+                  <div class="box-bottom">
+                    <div id="word">
+                        <span id="p1">500</span>
+                        <span id="p2">Total Vehicles</span>
+                    </div>
+                    <div id="dots">
+                        <div class="large-dot" id="bluedotslarge"></div>
+                        <div class="small-dot" id="bluedotssmall"></div>
+                        <div class="x-small-dot" id="bluedotssmall"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid-item">
+                <div class="box" id="box2">
+                  <img align="left" id="leftimg" width="14" height="14" src="Images/vehiclemanage.png" alt="vachicle">
+                  <img align="right" id="rightimg" width="24 " height="30" src="Images/wavepulse.png" alt="wavepulse"/>
+                  <div class="box-bottom">
+                     <div id="word">
+                        <span id="p1">480</span>
+                        <span id="p2">Active Vehicles</span>
+                     </div>
+                     <div id="dots">
+                        <div class="large-dot" id="greendotslarge"></div>
+                        <div class="small-dot" id="greendotssmall"></div>
+                        <div class="x-small-dot" id="greendotssmall"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid-item">
+                <div class="box" id="box3">
+                  <img align="left" id="leftimg" width="14" height="14" src="Images/vehiclemanage.png" alt="vachicle">
+                  <img align="right" id="rightimg" width="28 " height="28" src="Images/turn-off.png" alt="turn-off"/>
+                  <div class="box-bottom">
+                     <div id="word">
+                        <span id="p1">10</span>
+                        <span id="p2">Inactive Vehicles</span>
+                     </div>
+                     <div id="dots">
+                        <div class="large-dot" id="reddotslarge"></div>
+                        <div class="small-dot" id="reddotssmall"></div>
+                        <div class="x-small-dot" id="reddotssmall"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid-item">
+                <div class="box" id="box4">
+                  <img align="left" id="leftimg" width="14" height="14" src="Images/vehiclemanage.png" alt="vachicle">
+                  <img align="right" id="rightimg" width="20" height="20" src="Images/sleep.png" alt="sleep"/>
+                  <div class="box-bottom">
+                     <div id="word">
+                        <span id="p1">10</span>
+                        <span id="p2">Idle Vehicles</span>
+                     </div>
+                     <div id="dots">
+                        <div class="large-dot" id="orangedotslarge"></div>
+                        <div class="small-dot" id="orangedotssmall"></div>
+                        <div class="x-small-dot" id="orangedotssmall"></div>
+                     </div>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="grid-item">
+                <div class="box" id="box5">
+                  <img align="left" id="leftimg" width="14" height="14" src="Images/vehiclemanage.png" alt="vachicle">
+                  <img align="right" id="rightimg" width="19" height="19" src="Images/pending.png" alt="pending"/>
+                  <div class="box-bottom">
+                     <div id="word">
+                        <span id="p1">20</span>
+                        <span id="p2">Vehicle Approval Pending</span>
+                     </div>
+                     <div id="dots">
+                        <div class="large-dot" id="yellowdotslarge"></div>
+                        <div class="small-dot" id="yellowdotssmall"></div>
+                        <div class="x-small-dot" id="yellowdotssmall"></div>
+                     </div>
+                  </div>
+                </div>
+              </div>  
+
+              <div class="grid-item">
+                <div class="box" id="box6">
+                  <img align="left" id="leftimg" width="14" height="14" src="Images/vehiclemanage.png" alt="vachicle">
+                  <img align="right" id="rightimg" width="19" height="19" src="Images/rejected.png" alt="rejected"/>
+                  <div class="box-bottom">
+                     <div id="word">
+                        <span id="p1">2</span>
+                        <span id="p2">Vehicle Approval Rejected</span>
+                     </div>
+                     <div id="dots">
+                        <div class="large-dot" id="browndotslarge"></div>
+                        <div class="small-dot" id="browndotssmall"></div>
+                        <div class="x-small-dot" id="browndotssmall"></div>
+                     </div>
+                  </div>
+                </div>   
+              </div>
+            </div>
+
+            <!-- HTML code for rightcenter content shows - search bar, selection box, add new vehicles -->
+
+            <div class="centercontent">
+                <div class="search-container ">
+                  <input type="text" class="search-input" placeholder="Search..." />
+                  <a href=""><img src="Images/search.png" id="search-btn" height="20px" width="20px"  alt="search"></a>
+                </div>
+                <div class="inspectionstatus">
+                  <select name="status" id="inspection">
+                    <option value="Inspection status">Inspection Status</option>
+                  </select>
+                </div>
+                <div class="inspectionstatus">
+                  <select name="status" id="inspection">
+                    <option value="Vehicle Status">Vehicle Status</option>
+                  </select>
+                </div>
+                <div class="inspectionstatus">
+                  <select name="status" id="inspection">
+                    <option value="Date Range">Date Range</option>
+                  </select>
+                </div>
+                <div class="inspectionstatus">
+                  <select name="status" id="inspection">
+                    <option value="Type">Type</option>
+                  </select>
+                </div>
+                <div class="inspectionstatus">
+                  <select name="status" id="inspection">
+                    <option value="Engaged">Engaged</option>
+                  </select>
+                </div>
+                <div class="inspectionstatusnum">
+                <select name="status" id="inspection">
+                  <option value="number">25</option>
+                </select>
+                </div>
+                <div class="file">
+                  <a href=""><img align="left" id="file" width="16" height="16" src="Images/filter.png" alt="filter"/></a>
+                </div>
+                <div class="file">
+                  <a href=""><img align="left" id="file" width="16" height="16" src="Images/file.png" alt="file"/></a>
+                </div>
+                <div class="file">
+                  <a href=""><img align="left" id="file" width="16" height="16" src="Images/upload.png" alt="upload"/></a>
+                </div>
+                <!-- *****Add New Vehicle***** -->
+                <div class="centerright">
+                  <input type="button" onclick="DetailsForm()" class="centerright-btn" value="+  Add New Vehicle"/>
+                </div>
+            </div>
+            <!-- HTML code for Table content  -->
+          <div class="bottomcontent">
+                <div class="overlay" id="overlay"></div>
+                <div class="form-container" id="form-container">
+                    <h2>Enter Vehicle Details</h2>
+                    <form>
+                        <label for="serialNo">Serial No:</label>
+                        <input type="text" id="serialNo" required><br>
+            
+                        <label for="registrationNo">Registration No:</label>
+                        <input type="text" id="registrationNo" required><br>
+            
+                        <label for="vehicleId">Vehicle ID:</label>
+                        <input type="text" id="vehicleId" required><br>
+            
+                        <label for="vehicleType">Vehicle Type:</label>
+                        <input type="text" id="vehicleType" required><br>
+            
+                        <label for="ownerName">Owner Name:</label>
+                        <input type="text" id="ownerName" required><br>
+            
+                        <label for="phoneNo">Phone No:</label>
+                        <input type="text" id="phoneNo" required><br>
+            
+                        <label for="emailaddr">Email Address</label>
+                        <input type="text" id="emailaddr" required><br>
+            
+                        <label for="brand">Brand:</label>
+                        <input type="text" id="brand" required><br>
+
+                        <label for="model">Model:</label>
+                        <input type="text" id="model" required><br>
+            
+                        <label for="engaged">Engaged:</label>
+                        <input type="text" id="engaged" required><br>
+            
+                        <label for="registeredDate">Registered Date:</label>
+                        <input type="date" id="registeredDate" required><br>
+          
+                        <button id="adddetails" type="button" onclick="addDetails()">Add Details</button>
+                        <button id="close" type="button" onclick="closeForm()">Close</button>
+                    </form>
+            </div>
+        
+          
+            <table id="details-table">
+                <thead>
+                    <tr>
+                        <th>SERIAL NO</th>
+                        <th>REGISTRATION NO</th>
+                        <th>VEHICLE ID</th>
+                        <th>TYPE</th>
+                        <th>OWNER NAME</th>
+                        <th>PHONE NO</th>
+                        <th>EMAIL ADDRESS</th>
+                        <th>BRAND</th>
+                        <th>MODEL</th>
+                        <th>ENGAGED</th>
+                        <th>REGISTERED DATE</th>
+                        <th>INSPECTION STATUS</th>
+                        <th>VEHICLE STATE</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td>1</td>
+                        <td>TN 01 AB 1234</td>
+                        <td>NOTVH0001</td>
+                        <td>Lease</td>
+                        <td>Ezio Auditore</td>
+                        <td>9876543210</td>
+                        <td>eaio@gmail.com</td>
+                        <td>Maruti Suzuki</td>
+                        <td>Swift LXI</td>
+                        <td>Yes</td>
+                        <td>01 Jan 2023</td>
+                        <td>
+                            <div class="select-wrapper">
+                                <select id="select1">
+                                    <option  style="color:orange;" value="Pending">Inspected</option>
+                                    <option  style="color:blue;" value="Inspected">Pending</option>
+                                    <option  style="color:green;" value="Client Approved">Client Approved</option>
+                                    <option  style="color:red;" value="Rejected">Rejected</option>
+                                    <option  style="color:rgb(119, 88, 11);" value="Incomplte">Incomplte</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                          <div class="select-wrapper">
+                              <select id="select2">
+                                  <option  style="color:green;" value="Active">Active</option>
+                                  <option  style="color:red;" value="Inactive">Inactive</option>
+                                  <option  style="color:rgb(120, 88, 7);" value="Idle">Idle</option>
+                                  <option  style="color:brown;" value="Temporarily">Temporarily</option>
+                                  <option  style="color:rgb(63, 58, 58)"value="Permanently">Permanently</option>
+                              </select>
+                          </div>
+                      </td>
+                        <td>
+                          <div class="action">
+                          <a href=""><img id="action1" width="10" height="10" src="Images/eye.png" alt="check"/></a>
+                          <a href=""><img id="action2" width="10" height="10" src="Images/pen.png" alt="write"/></a>
+                          <a href=""><img id="action3" width="10" height="10" src="Images/trash.png" alt="delete"/></a>
+                          </div>
+                      </td>
+                    </tr> 
+                </tbody>
+              <tbody id="table-body">
+                  <tr>
+                      <td>2</td>
+                      <td>TN 01 AB 5678</td>
+                      <td>NOTVH0002</td>
+                      <td>Attached</td>
+                      <td>Alexander</td>
+                      <td>9876543210</td>
+                      <td>alex@gmail.com</td>
+                      <td>Hyundai</td>
+                      <td>i10 S(0)</td>
+                      <td>No</td>
+                      <td>01 Jan 2023</td>
+                      <td>
+                          <div class="select-wrapper">
+                              <select id="select1">
+                                  <option style="color:orange;" value="Inspected">Inspected</option>
+                                  <option style="color:blue;" value="Pending">Pending</option>
+                                  <option style="color:green;" value="Client Approved">Client Approved</option>
+                                  <option style="color:red;"value="Rejected">Rejected</option>
+                                  <option style="color:rgb(125, 91, 3);" value="Incomplte">Incomplte</option>
+                              </select>
+                          </div>
+                      </td>
+                      <td>
+                        <div class="select-wrapper">
+                            <select id="select2">
+                                <option style="color:green;" value="Active">Active</option>
+                                <option style="color:red;" value="Inactive">Inactive</option>
+                                <option style="color:rgb(121, 88, 3);" value="Idle">Idle</option>
+                                <option style="color:brown;" value="Temporarily">Temporarily</option>
+                                <option style="color:rgb(63, 58, 58)" value="Permanently">Permanently</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="action">
+                        <a href=""><img id="action1" width="10" height="10" src="Images/eye.png" alt="check"/></a>
+                        <a href=""><img id="action2" width="10" height="10" src="Images/pen.png" alt="write"/></a>
+                        <a href=""><img id="action3" width="10" height="10" src="Images/trash.png" alt="delete"/></a>
+                        </div>
+                    </td>
+                  </tr> 
+                  <tbody id="tables-body">
+                  </tbody>
+              </tbody>
+            </table>
+          </div>
+       </div>
+
+    </div>   
+</body>
+</html>
